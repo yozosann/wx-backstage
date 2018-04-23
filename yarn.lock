@@ -2197,9 +2197,9 @@ function-bind@^1.0.2:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/function-bind/-/function-bind-1.1.1.tgz#a56899d3ea3c9bab874bb9773b7c5ede92f4895d"
 
-furoshiki-pack@^1.0.7:
-  version "1.0.7"
-  resolved "https://registry.yarnpkg.com/furoshiki-pack/-/furoshiki-pack-1.0.7.tgz#58cf3fb78af1a5d19cc3ab0051ad9062018e1126"
+furoshiki-pack@1.0.12:
+  version "1.0.12"
+  resolved "https://registry.yarnpkg.com/furoshiki-pack/-/furoshiki-pack-1.0.12.tgz#0c30f2bd12c9312d23bee932a077fe630dac6ee8"
   dependencies:
     assets-webpack-plugin "^3.5.1"
     babel-core "^6.26.0"

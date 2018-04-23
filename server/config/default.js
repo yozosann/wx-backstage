@@ -6,5 +6,8 @@ module.exports = {
     // 启动端口，PORT优先
     port: +process.env.PORT || 9999,
     apiConfig: null,
-    mainHtml: 'index.html'
+    mainHtml: 'index.html',
+
+    assetDir: path.resolve("static"),
+    assetDirAbsolute: path.join(__dirname, '../../static'),
 };
