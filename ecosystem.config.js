@@ -29,8 +29,8 @@ module.exports = {
       user : 'root',
       host : '140.82.43.167',
       ref  : 'origin/master',
-      repo : 'git@github.com:repo.git',
-      path : '/var/www/production',
+      repo : 'git@github.com:yozosann/wx-backstage.git',
+      path : '/root/www/production',
       'post-deploy' : 'npm install && pm2 reload ecosystem.config.js --env production'
     },
     dev : {
