@@ -31,7 +31,10 @@ module.exports = {
       ref  : 'origin/master',
       repo : 'git@github.com:yozosann/wx-backstage.git',
       path : '/root/www/production',
-      'post-deploy' : 'npm install && pm2 reload ecosystem.config.js --env production'
+      'post-deploy' : 'bash ./post-deploy',
+      env  : {
+        NODE_ENV: 'production'
+      }
     },
     dev : {
       user : 'node',
@@ -39,9 +42,9 @@ module.exports = {
       ref  : 'origin/master',
       repo : 'git@github.com:repo.git',
       path : '/var/www/development',
-      'post-deploy' : 'npm install && pm2 reload ecosystem.config.js --env dev',
+      'post-deploy' : 'bash ./post-deploy',
       env  : {
-        NODE_ENV: 'dev'
+        NODE_ENV: 'test'
       }
     }
   }
