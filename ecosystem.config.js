@@ -31,7 +31,7 @@ module.exports = {
       ref  : 'origin/master',
       repo : 'git@github.com:yozosann/wx-backstage.git',
       path : '/root/www/production',
-      'post-deploy' : 'bash ./bin/post-deploy',
+      'post-deploy' : 'npm install',
       env  : {
         NODE_ENV: 'production'
       }
@@ -42,7 +42,7 @@ module.exports = {
       ref  : 'origin/master',
       repo : 'git@github.com:repo.git',
       path : '/var/www/development',
-      'post-deploy' : 'npm install',
+      'post-deploy' : 'bash ./bin/post-deploy',
       env  : {
         NODE_ENV: 'test'
       }
