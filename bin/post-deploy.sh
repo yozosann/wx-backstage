@@ -12,9 +12,10 @@ echo "打包环境: $NODE_ENV"
 echo "============================================================================"
 
 echo "安装node_modules..."
-yarn
-yarn cache dir
-npm rebuild node-sass
+# yarn
+# yarn cache dir
+# npm rebuild node-sass
+npm install
 
 echo "开始打包..."
 NODE_ENV=$NODE_ENV npm run build
