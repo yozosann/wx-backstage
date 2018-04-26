@@ -42,7 +42,7 @@ module.exports = {
       ref  : 'origin/master',
       repo : 'git@github.com:repo.git',
       path : '/var/www/development',
-      'post-deploy' : 'bash ./bin/post-deploy',
+      'post-deploy' : 'npm install',
       env  : {
         NODE_ENV: 'test'
       }
