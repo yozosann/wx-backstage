@@ -1,7 +1,9 @@
 <template>
   <Layout>
-    <div slot="content">
-      111
+    <div slot="content" class="content">
+      <div class="img-upload">
+        <DragImageUpload v-model="imgArray"></DragImageUpload>
+      </div>
     </div>
   </Layout>
 </template>
@@ -10,13 +12,12 @@
 export default {
   data() {
     return {
-      activeIndex: "1"
+      activeIndex: "1",
+      imgArray: []
     };
   },
   created() {
-    this.$get({url: '/api/ssss'}).then(data => {
-      console.log(data);
-    });
+    
   },
   methods: {
     handleSelect() {}
@@ -24,8 +25,10 @@ export default {
 };
 </script>
 
-<style rel="stylesheet/scss" scoped>
-h1 {
-  font-size: 20px;
+<style lang="scss" rel="stylesheet/scss" scoped>
+.content {
+  .img-upload {
+    width: 1000px;
+  }
 }
 </style>

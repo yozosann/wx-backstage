@@ -20,6 +20,7 @@
     "file-loader": "^1.1.11",
     "furoshiki-pack": "1.0.12",
     "moment": "^2.22.0",
+    "node-sass": "^4.9.0",
     "query-string": "^5.0.1"
   }
 }
