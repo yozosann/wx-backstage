@@ -10,7 +10,7 @@
 </template>
 
 <script>
-// import { uploadImg } from 'services/imageUpload.js';
+import upload from "utils/imageUpload";
 
 export default {
   props: {
@@ -142,7 +142,7 @@ export default {
       for (let i = 0, file; (file = files[i++]); ) {
         this.validateImage(file)
           .then(() => {
-            this.upload(file)
+            upload(file)
               .then(data => {
                 this.$emit("getUrl", data.url);
 
@@ -161,53 +161,13 @@ export default {
             console.warn(err);
             this.$notify.error({
               title: "错误：" + file.name,
-              message: this.errorMessage(
-                err.split("\n"),
-                "错误详情："
-              ),
+              message: this.errorMessage(err.split("\n"), "错误详情："),
               duration: 5000
             });
           });
       }
 
       e.target.value = "";
-    },
-
-    // 图片上传函数
-    upload(file) {
-      return this.$post({
-        options: {
-          headers: {
-            "Content-Type": "multipart/form-data"
-          }
-        },
-        url: "/api/upload",
-        body: {
-          file: file,
-          ratio: this.ratio
-        }
-      })
-        .then(data => {
-          let errorMsg = "";
-          if (
-            this.mode === "multi" &&
-            this.maxPic &&
-            this.imgArray.length > this.maxPic - 1
-          ) {
-            errorMsg = `不能超过${this.maxPic}张`;
-          }
-          if (!data.url) {
-            errorMsg = "上传失败，请重试";
-          }
-          if (errorMsg) {
-            throw new Error(errorMsg);
-          } else {
-            return data;
-          }
-        })
-        .catch(err => {
-          throw err;
-        });
     }
   }
 };

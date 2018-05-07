@@ -21,6 +21,7 @@
     "furoshiki-pack": "1.0.12",
     "moment": "^2.22.0",
     "node-sass": "^4.9.0",
+    "qiniu-js": "^2.2.2",
     "query-string": "^5.0.1"
   }
 }
