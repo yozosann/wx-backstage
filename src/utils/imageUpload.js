@@ -7,7 +7,6 @@ export default async (file) => {
   let data = await post({url: "/api/getUploadToken"}), token;
   if(data.token) {
     token = data.token;
-    console.log(token)
   } else {
     throw new Error({
       code: '11',
@@ -24,7 +23,7 @@ export default async (file) => {
   let observable = qiniu.upload(file, file.name, token, putExtra);
   return new Promise((resolve, reject) => {
     observable.subscribe(()=>{}, (err)=>{
-      console.log(err)
+      reject(err)
     }, (obj)=> {
       resolve({
         url: domain + obj.key
