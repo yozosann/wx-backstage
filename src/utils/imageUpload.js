@@ -4,7 +4,7 @@ import * as qiniu from "qiniu-js";
 
 export default async (file) => {
   const domain = 'http://p7vv6q8do.bkt.clouddn.com/';
-  let data = await post({url: "/api/getUploadToken"}), token;
+  let data = await get({url: "/api/getUploadToken"}), token;
   if(data.token) {
     token = data.token;
   } else {

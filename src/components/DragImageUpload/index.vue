@@ -78,6 +78,7 @@ import dragItem from './drag-item.js';
 import ValidateImageInput from './ValidateImageInput';
 import Layer from '../ImageViewer';
 import loadingGif from './loading.gif';
+import index from 'vue';
 
 const ADD = 'add';
 const MODIFY = 'modify';
@@ -126,8 +127,6 @@ export default {
             type: Object,
             default: function() {
                 return {
-                    width: 750,
-                    height: 750,
                     maxSize: 300, //单位kb
                     picFormat: [] //图片格式
                 };
@@ -195,10 +194,7 @@ export default {
         };
     },
     mounted() {
-        this.imgArray = this.value.map(url => {
-            return this.createImgObj(url);
-        });
-        this.isInit = false;
+        this.init();
         this.getItemWidthAndHeight();
 
         window.addEventListener('resize', () => {
@@ -230,7 +226,12 @@ export default {
                 }
             },
             deep: true
-        }
+        },
+        // value(new11,old) {
+        //     this.imgArray = this.value.map(url => {
+        //             return this.createImgObj(url);
+        //         });
+        // }
     },
 
     computed: {
@@ -244,6 +245,22 @@ export default {
     },
 
     methods: {
+        outsideChange(arr) {
+            this.imgArray = arr.map((url, index) => {
+                if(this.imgArray[index]) {
+                    this.imgArray[index].showUrl = url;
+                    return this.imgArray[index];
+                }else {
+                    return this.createImgObj(url);
+                }
+            });
+        },
+        init() {
+            this.imgArray = this.value.map(url => {
+                return this.createImgObj(url);
+            });
+            this.isInit = false;
+        },
         getItemWidthAndHeight() {
             if (this.$refs.wrapper && this.$refs.wrapper.clientWidth) {
                 let wrapperWidth = this.$refs.wrapper.clientWidth;
