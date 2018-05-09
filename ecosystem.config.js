@@ -27,7 +27,7 @@ module.exports = {
   deploy : {
     production : {
       user : 'root',
-      host : '140.82.43.167',
+      host : '108.61.182.82',
       ref  : 'origin/master',
       repo : 'git@github.com:yozosann/wx-backstage.git',
       path : '/root/www/production',
@@ -38,7 +38,7 @@ module.exports = {
     },
     dev : {
       user : 'node',
-      host : '212.83.163.1',
+      host : '108.61.182.82',
       ref  : 'origin/master',
       repo : 'git@github.com:repo.git',
       path : '/var/www/development',
