@@ -6,5 +6,14 @@ module.exports = {
     '/api': {
       url: localApi
     },
+    '/.well-known/pki-validation/fileauth.txt': {
+      url: localApi,
+      map: function(path) {
+				return path.replace(
+					"/.well-known/pki-validation/fileauth.txt",
+					"/fileauth.txt"
+				);
+			}
+    }
   }
 };
