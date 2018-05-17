@@ -16,10 +16,6 @@
 </template>
 
 <script>
-const CryptoJS = require("crypto-js");
-import { getItem } from "utils/cookies"
-import { toLink } from "utils"
-
 export default {
   data() {
     return {
@@ -30,20 +26,8 @@ export default {
   },
   created() {
     this.getImages();
-    this.login();
   },
   methods: {
-    async login() {
-      // let userId = 'ne3nrfr',password = '12334';
-      // let cipher = CryptoJS.AES.encrypt(password, 'yozo').toString();
-      // console.log(cipher);
-
-      // let data = await this.$post({url: "/api/login", body: {
-      //   userId, cipher
-      // }});
-      // let a = getItem('eee');
-      // toLink('/login.html');
-    },
     async getImages() {
       let data = await this.$get({url: "/api/getImages"});
       this.imgArrayCopy = this.imgArray = data.images.map(item => item.url);
