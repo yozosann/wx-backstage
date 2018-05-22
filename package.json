@@ -11,7 +11,8 @@
     "node-test": "frsk node",
     "node": "NODE_ENV=production frsk node",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "deploy": "pm2 deploy ecosystem.config.js production"
+    "deploy": "pm2 deploy ecosystem.config.js production",
+    "debug": "nodemon  --inspect ./server dev"
   },
   "author": "",
   "license": "ISC",
